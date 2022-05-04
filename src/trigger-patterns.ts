@@ -16,7 +16,7 @@ export class TriggerPatterns {
 		/\\vref\*?{/i,
 		/** hyperref */
 		/\\(auto|name)ref\*?{/i,
-		/\\hyperref\*?\[/i,
+		/\\hyperref\*?\[/i,	// special trigger char
 		/** cleverref */
 		/\\(label)?cref\*?{/i,
 		/\\cpageref(range)?\*?{/i,
