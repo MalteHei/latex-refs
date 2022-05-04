@@ -1,0 +1,87 @@
+{
+	"name": "latex-refs",
+	"displayName": "LaTeX Refs",
+	"description": "Intellisense for Labels to reference from your LaTeX Files.",
+	"version": "1.0.0",
+	"publisher": "maltehei",
+	"repository": "https://github.com/MalteHei/latex-refs",
+	"bugs": "https://github.com/MalteHei/latex-refs/issues",
+	"main": "./out/extension.js",
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"categories": [
+		"Language Packs",
+		"Education"
+	],
+	"keywords": [
+		"latex",
+		"references",
+		"labels",
+		"intellisense",
+		"code completion"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "latex-refs.updateMarkers",
+				"title": "LaTeX-Refs: Update Markers",
+				"shortTitle": "Update Markers"
+			}
+		],
+		"configuration": {
+			"title": "LaTeX Refs",
+			"properties": {
+				"latex-refs.customPatterns": {
+					"markdownDescription": "Specify your own regular expressions for commands that should have Intellisense. \n\nExample: \n```json \n[ \"myRefCmd\" ] \n``` \nThis will enable Intellisense for the command `\\myRefCmd{}`.",
+					"type": "array",
+					"default": [],
+					"items": {
+						"type": "string",
+						"pattern": "^.*[^{]$"
+					}
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "latex",
+				"aliases": [
+					"LaTeX",
+					"TeX"
+				],
+				"extensions": [
+					".tex"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./src",
+		"watch": "tsc -watch -p ./src",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"publish": "vsce publish",
+		"publish:major": "vsce publish major",
+		"publish:minor": "vsce publish minor",
+		"publish:patch": "vsce publish patch"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.66.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.21.0",
+		"@typescript-eslint/parser": "^5.21.0",
+		"eslint": "^8.14.0",
+		"glob": "^8.0.1",
+		"mocha": "^9.2.2",
+		"typescript": "^4.6.4",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
