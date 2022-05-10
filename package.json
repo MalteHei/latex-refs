@@ -35,6 +35,11 @@
 		"configuration": {
 			"title": "LaTeX Refs",
 			"properties": {
+				"latex-refs.debug": {
+					"markdownDescription": "Enable debug output",
+					"type": "boolean",
+					"default": false
+				},
 				"latex-refs.customPatterns": {
 					"markdownDescription": "Specify your own regular expressions for commands that should have Intellisense. \n\nExample: \n```json \n[ \"myRefCmd\" ] \n``` \nThis will enable Intellisense for the command `\\myRefCmd{}`.",
 					"type": "array",
