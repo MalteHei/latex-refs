@@ -13,7 +13,7 @@ export class Commands {
 		const disposables: vscode.Disposable[] = [];
 
 		// command to invoke updating markers
-		disposables.push(vscode.commands.registerTextEditorCommand(
+		disposables.push(vscode.commands.registerCommand(
 			this.COMMANDS.find(c => c.shortTitle.startsWith('Update'))?.command as string,
 			() => FileReader.updateAndGetMarkers(ctx, { manual: true })
 		));
