@@ -2,7 +2,7 @@
 	"name": "latex-refs",
 	"displayName": "LaTeX Refs",
 	"description": "Intellisense for Labels to reference from your LaTeX Files.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "maltehei",
 	"repository": "https://github.com/MalteHei/latex-refs",
 	"bugs": "https://github.com/MalteHei/latex-refs/issues",
